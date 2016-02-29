@@ -1,0 +1,59 @@
+<?php
+/**
+ * @file
+ *   My routedTabs Angular App module
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function routedTabs_menu() {
+  $items['routedTabs'] = array(
+    'title' => 'routed tabs',
+    'page callback' => 'routed_tabs_page',
+    'access callback' => TRUE,
+    'access arguments' => array('access content'),
+   	'menu_name' => 'main-menu',  
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function routedTabs_theme() {
+  return array(
+    'routedTabs' => array(
+      'template' => 'routedTabs',
+    ),
+  );
+}
+
+
+
+
+/**
+ * Tabs page callback.
+ */
+function routed_tabs_page(){
+  // Set the path
+  $path = drupal_get_path('module', 'routedTabs');
+
+  // Load angular
+  drupal_add_library('angularjs', 'angularjs');
+
+  // Load the app
+  drupal_add_js($path . '/js/routedTabs.gen.js');
+  
+  drupal_add_js($path . '/bower_components/angular-bootstrap/ui-bootstrap.js');
+  drupal_add_js($path . '/bower_components/angular-bootstrap/ui-bootstrap-tpls.js');
+  drupal_add_js($path . '/bower_components/angular-ui-router/release/angular-ui-router.min.js');
+  drupal_add_js($path . '/bower_components/angular-ui-router-tabs/src/ui-router-tabs.js');
+
+  drupal_add_css($path . '/css/bootstrap.css');
+
+  // Return the HTML template
+  return theme('routedTabs');
+}

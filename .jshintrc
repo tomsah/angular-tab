@@ -106,6 +106,6 @@
       "WebPage"
     ],
    "globals" : {
-      "tabsUi": true
+      "routedTabs": true
    }
 }

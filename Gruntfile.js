@@ -6,14 +6,14 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       scripts: {
-        files: ['./js/**/*.js', '!./js/tabsUi.gen.js'],
-        tasks: ['jshint', 'concat:tabsUi']
+        files: ['./js/**/*.js', '!./js/routedTabs.gen.js'],
+        tasks: ['jshint', 'concat:routedTabs']
       }
     },
     concat: {
-      tabsUi: {
-        src: ['./js/tabsUi/**/*.js', '!./js/climbs/tabsUi.gen.js'],
-        dest: './js/tabsUi.gen.js'
+      routedTabs: {
+        src: ['./js/routedTabs/**/*.js', '!./js/routedTabs/routedTabs.gen.js'],
+        dest: './js/routedTabs.gen.js'
       }
     },
     jshint: {
