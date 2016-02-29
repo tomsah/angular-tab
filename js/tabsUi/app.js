@@ -1,4 +1,4 @@
-var tabsUi = angular.module('tabsUi', []);
+var tabsUi = angular.module('tabsUi', ['ui.router', 'ui.bootstrap']);
 
 jQuery(document).ready(function() {
   /**

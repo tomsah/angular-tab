@@ -47,7 +47,9 @@ function tabs_ui_page(){
 
   // Load the app
   drupal_add_js($path . '/js/tabsUi.gen.js');
-  drupal_add_js($path . '/node_modules/angular-ui-router/release/angular-ui-router.min.js');
+  drupal_add_js($path . '/bower_components/angular-aria/angular-aria.js');
+  drupal_add_js($path . '/bower_components/angular-animate/angular-animate.js');
+  drupal_add_js($path . '/bower_components/angular-material/angular-material.js');
 
   drupal_add_css($path . '/css/bootstrap.css');
 
